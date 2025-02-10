@@ -10,7 +10,7 @@ Step 1
 Step 2
 > พิมพ์โค้ดเพื่อ "เข้ารหัส" ตามลุงได้เลย สร้างไฟล์ชื่อ encrypt_fernet.py
 #-----Start------
-
+```
 from cryptography.fernet import Fernet
 
 key = Fernet.generate_key()
@@ -21,7 +21,7 @@ text = 'ที่หมู่บ้านของเรามีนายพล
 f = Fernet(key)
 message = f.encrypt(text.encode('utf-8'))
 print('ข้อความที่เข้ารหัสแล้วคือ: ', message.decode('utf-8'))
-
+```
 #-----End------
 
 Step 3
@@ -36,7 +36,7 @@ Step 4
 
 Step 5 
 > การถอดรหัส ทำได้โดยสร้างไฟล์ decrypt_fernet.py โดยบรรทัด text = และ key = ต้องมีตัว b ติดกับ single quote คล้ายๆของลุง เพื่อแปลงเป็นคลาส bytes ก่อน
-
+```
 from cryptography.fernet import Fernet
 
 text = b'gAAAAA......5QXbw==' #ตามรหัสด้านบน
@@ -45,7 +45,7 @@ key = b'd-yf6gq......Stnvodc==' #ตามรหัสด้านบน
 f = Fernet(key)
 message = f.decrypt(text).decode('utf-8')
 print(message)
-
+```
 Step 6 กด Run ก็จะได้ output ดังนี้
 > ที่หมู่บ้านของเรามีนายพลอยู่จำนวน ๘๘๘ คนรับเงินเดือนเดือนละแสนห้า พร้อมรถประจำตำแหน่ง + บัตรเติมน้ำมัน + บ้านพูลวิลล่า
 
