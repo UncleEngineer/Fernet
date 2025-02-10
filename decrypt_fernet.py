@@ -1,0 +1,9 @@
+from cryptography.fernet import Fernet
+
+text = b'gAAAAABnqhXNIB2d9CqXlmhKlcecsLYupI-csJQH3EJ7uOlpFNecOy7nfH0-t5MVz6dZJ_PRWlnL6wydRjIexXYwqnxCuSoXdAD19_EBsUjjU7T-0vvM89R57qeLxU4ZTkTqPO1VZmoE11C8pQ3HWSAHifEqccLV7Gx2Awl8zvasK5uTMetzGj1aKzrWSZXfZfsGLNviNy4KjQdWu9bqBMTvEYhzEDyZ9sYtKhty5dnkVb5E2P5XeNDLHONmiGg8YtaCto1LkH0-WNQooUE8JEJ4xnzmsoVjT3ux5UoSb5qFzpSn0n4sL9_BnNX69l8_Y_kRRHWdHuWSHVsnk1TclWEb7-i1-NDfRIosqTD7rUUPjZvtSmA5L3t92UNNn0kbogPgJJ_rBAjWYYfjKD7NmCFz7w03qKCHys3oXeGZhKCrrg6_oRRtY3QJmstPTJLGDdYGlkczWArIF22nHtmQJFHAmMiQ-_s_jaiLpyleg-ZYDj-O2TN_49GxC-wrIbhYJKXSfb8j2MbJjC7X3gff-ex2kxkhY5QXbw=='
+
+key = b'd-yf6gqteo18GAUuESLRlANE4iOL2XJqZibzStnvodc=='
+
+f = Fernet(key)
+message = f.decrypt(text).decode('utf-8')
+print(message)
